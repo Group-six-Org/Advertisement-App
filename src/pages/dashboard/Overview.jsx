@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react'
+import DashNav from '../../components/DashNav'
+import Dashoverv from '../../components/Dashoverv'
 
 const Overview = () => {
-  return <div>Overview</div>;
-};
+  return (
+    <div>
+      <Dashoverv/>
+    </div>
+  )
+}
 
-export default Overview;
+export default Overview

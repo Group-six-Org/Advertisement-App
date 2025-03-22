@@ -1,0 +1,54 @@
+#mainContainer {
+  width: 100%;
+  position: relative;
+}
+.custom-shape-divider-top-1701256467 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.custom-shape-divider-top-1701256467 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 118px;
+}
+
+.custom-shape-divider-top-1701256467 .shape-fill {
+  fill: green;
+}
+#allAdds {
+  color: rgb(185, 122, 122);
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: initial;
+  background: linear-gradient(to right, yellow, orange);
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 200;
+}
+.myButton {
+  display: block;
+  width: 125px;
+  height: 35px;
+  cursor: pointer;
+  background-color: rgb(164, 164, 190);
+  font-weight: bold;
+  color: white;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-style: oblique;
+  transition: .3s ease-in-out;
+}
+.myButton:hover {
+  background-color: aliceblue;
+  color: black;
+}

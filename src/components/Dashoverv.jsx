@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import images from "./../assets/images/blender.jpg"
 import image2 from "./../assets/images/car.jpg"
 
@@ -99,4 +99,4 @@ return (
 };
 
 
-export default Dashoverv
+export default Dashoverv;

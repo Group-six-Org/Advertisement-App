@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router'
 
 const DashNav = () => {
@@ -22,7 +22,7 @@ const DashNav = () => {
 </div>
 </nav>
     </div>
-  )
-}
+  );
+};
 
-export default DashNav
+export default DashNav;

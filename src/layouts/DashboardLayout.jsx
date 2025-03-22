@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router";
 import DashNav from "../components/DashNav";
-import Overview from "../pages/dashboard/Overview";
+// import Overview from "../pages/dashboard/Overview";
 
 const DashboardLayout = () => {
   return (

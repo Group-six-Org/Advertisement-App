@@ -58,7 +58,7 @@ const VendorAds = () => {
     </div>
   </div>
     
-  )
+  );
   
 };
 

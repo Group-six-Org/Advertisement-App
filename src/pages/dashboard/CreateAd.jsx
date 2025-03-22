@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const CreateAd = () => {
   return (
@@ -72,7 +72,7 @@ const CreateAd = () => {
     </div>
   </div>
 
-  )
-}
+  );
+};
 
-export default CreateAd
+export default CreateAd;

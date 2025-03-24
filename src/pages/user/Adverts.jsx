@@ -4,7 +4,10 @@ import carImage from "../../assets/imagen-lexus.jpg";
 import houseImage from "../../assets/house.jpeg";
 import ipadImage from "../../assets/iPad.webp";
 import newCar from "../../assets/newcar.jpeg";
+ feature/new-authentication
 import { apiGetAllAdverts } from "../../services/adverts";
+import SingleAd from "./SingleAd";
+ main
 
 const Adverts = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -176,37 +179,38 @@ const Adverts = () => {
       <div className="mt-10">
         <img src={carImage} alt="dosomething" />
       </div>
+      <SingleAd />
     </div>
   );
 };
 
 export default Adverts;
 
-// import React from "react";
-// import AddsCard from "../../components/AddsCard";
+// // import React from "react";
+// // import AddsCard from "../../components/AddsCard";
 
-// const Adverts = () => {
-//   return (
-//     <div className="flex flex-col bg-blue-100 min-h-screen">
-//       <div>
-//         <h2>Adverts page</h2>
-//         <div className="search-area">
-//           <div className="categories-side">
-//             <p>Options goes here</p>
-//           </div>
-//           <div>
-//           <p>Search bar goes here</p>
-//           </div>        </div>
-//       </div>
-//       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-15">
-//         <AddsCard title="Onion" category="Luxary" price={10}/>
-//         <AddsCard title="Mango" category = "Fashion" price={20}/>
-//         <AddsCard title="Apple" category = "Car" price={30}/>
-//         <AddsCard title="Banana" category = "House" price={40} />
-//         <AddsCard title="Orange" category = "Car" price={50} />
-//       </div>
-//     </div>
-//   );
-// };
+// // const Adverts = () => {
+// //   return (
+// //     <div className="flex flex-col bg-blue-100 min-h-screen">
+// //       <div>
+// //         <h2>Adverts page</h2>
+// //         <div className="search-area">
+// //           <div className="categories-side">
+// //             <p>Options goes here</p>
+// //           </div>
+// //           <div>
+// //           <p>Search bar goes here</p>
+// //           </div>        </div>
+// //       </div>
+// //       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-15">
+// //         <AddsCard title="Onion" category="Luxary" price={10}/>
+// //         <AddsCard title="Mango" category = "Fashion" price={20}/>
+// //         <AddsCard title="Apple" category = "Car" price={30}/>
+// //         <AddsCard title="Banana" category = "House" price={40} />
+// //         <AddsCard title="Orange" category = "Car" price={50} />
+// //       </div>
+// //     </div>
+// //   );
+// // };
 
-// export default Adverts;
+// // export default Adverts;

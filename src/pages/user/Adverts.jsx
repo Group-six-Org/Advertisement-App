@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddsCard from "../../components/AddsCard";
 import carImage from "../../assets/imagen-lexus.jpg";
 import houseImage from "../../assets/house.jpeg";
 import ipadImage from "../../assets/iPad.webp";
 import newCar from "../../assets/newcar.jpeg";
+import { apiGetAllAdverts } from "../../services/adverts";
 
 const Adverts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All");
 
+  const fetchAdds = async () => {
+    try {
+      const res = await apiGetAllAdverts();
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchAdds();
+  }, []);
   const adverts = [
     { image: newCar, title: "Car@frosty.onion", category: "Cars", price: 10 },
     {
@@ -93,19 +106,19 @@ const Adverts = () => {
       className="flex flex-col bg-blue-100 min-h-screen p-5"
     >
       <div>
-          <div className=" custom-shape-divider-top-1701256467">
-            <svg
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                className="shape-fill"
-              ></path>
-            </svg>
-          </div>
+        <div className=" custom-shape-divider-top-1701256467">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              className="shape-fill"
+            ></path>
+          </svg>
+        </div>
         <h2 id="allAdds" className="text-xl font-bold text-center mt-20">
           @AllAdds.onion
         </h2>

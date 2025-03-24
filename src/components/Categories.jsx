@@ -4,13 +4,12 @@ import image2 from "./../assets/images/car 2.jpg";
 import image3 from "./../assets/images/home 1.jpg";
 import image4 from "./../assets/images/home 2.jpg";
 import image5 from "./../assets/images/iphone.jpg";
-import image6 from "./../assets/images/blender.jpg";
 
 const Categories = () => {
   return (
     <section className="py-10 bg-gray-100">
       <div className="container mx-auto">
-        <h2 className="text-center text-3xl font-bold mb-6">
+        <h2 className="text-center text-3xl text-gray-800 font-bold mb-6">
           Explore Categories
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-3">
@@ -78,7 +77,7 @@ const Categories = () => {
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image6}
+                src={image5}
                 alt="Electronic 2"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />

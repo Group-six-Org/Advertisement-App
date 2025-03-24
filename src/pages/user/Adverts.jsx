@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddsCard from "../../components/AddsCard";
 import carImage from "../../assets/imagen-lexus.jpg";
 import houseImage from "../../assets/house.jpeg";
 import ipadImage from "../../assets/iPad.webp";
 import newCar from "../../assets/newcar.jpeg";
+ feature/new-authentication
+import { apiGetAllAdverts } from "../../services/adverts";
 import SingleAd from "./SingleAd";
+ main
 
 const Adverts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All");
 
+  const fetchAdds = async () => {
+    try {
+      const res = await apiGetAllAdverts();
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchAdds();
+  }, []);
   const adverts = [
     { image: newCar, title: "Car@frosty.onion", category: "Cars", price: 10 },
     {

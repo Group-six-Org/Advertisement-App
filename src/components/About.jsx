@@ -1,4 +1,5 @@
 import React from "react";
+import image from "../assets/images/about us.jpg";
 
 const About = () => {
   return (
@@ -12,7 +13,7 @@ const About = () => {
         </p>
 
         <img
-          src="your-image-url.jpg"
+          src={image}
           alt="About Us Image"
           className="w-full md:w-1/2 h-auto mx-auto my-6 rounded-lg shadow-lg"
         />

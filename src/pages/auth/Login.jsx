@@ -1,6 +1,19 @@
 import React from "react";
+import { apiLogin } from "../../services/auth";
 
 const Login = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    try {
+      const response = await apiLogin(formData);
+      console.log(response);
+      alert("successful");
+    } catch (error) {
+      console.log(error);
+      alert("failed");
+    }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md">
@@ -11,7 +24,7 @@ const Login = () => {
           Enter your credentials to access your account.
         </p>
 
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block font-semibold text-gray-700">Email</label>
             <input
@@ -39,6 +52,7 @@ const Login = () => {
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition"
+            required
           >
             Login
           </button>

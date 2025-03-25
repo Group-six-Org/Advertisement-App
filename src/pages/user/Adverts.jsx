@@ -25,6 +25,7 @@ const Adverts = () => {
   useEffect(() => {
     fetchAdds();
   }, []);
+
   const adverts = [
     { image: newCar, title: "Car@frosty.onion", category: "Cars", price: 10 },
     {

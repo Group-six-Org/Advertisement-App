@@ -1,4 +1,6 @@
 import React from "react";
+import image from "../../assets/images/car 1.jpg"
+import { Link } from "react-router";
 
 
 const VendorAds = () => {
@@ -21,12 +23,14 @@ const VendorAds = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {Array.from({ length: 8 }).map((_, index) => (
           <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="./asset/images/car.jpg" alt="Car" className="w-full h-48 object-cover" />
+            <img src={image} alt="Car" className="w-full h-48 object-cover" />
             <div className="p-4">
               <h2 className="text-lg font-bold">Toyota Land Cruiser</h2>
               <p className="text-gray-600">GHs 250,000.00</p>
               <div className="mt-4 flex justify-between">
-                <button className="bg-black text-white px-4 py-2 rounded">Edit</button>
+                <Link to='/dashboard/editForm'>
+                   <button className="bg-black text-white px-4 py-2 rounded">Edit</button>
+                </Link>
                 <button className="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
               </div>
             </div>

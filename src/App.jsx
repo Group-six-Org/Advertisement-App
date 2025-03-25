@@ -12,6 +12,7 @@ import Overview from "./pages/dashboard/Overview";
 import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
 import "./App.css";
+import EditForm from "./components/EditForm";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route index={true} element={<Overview />} />
           <Route path="create-ad" element={<CreateAd />} />
           <Route path="ads" element={<VendorAds />} />
+          <Route path="editForm" element={<EditForm />} />
         </Route>
       </Routes>
     </BrowserRouter>

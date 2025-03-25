@@ -4,10 +4,10 @@ import carImage from "../../assets/imagen-lexus.jpg";
 import houseImage from "../../assets/house.jpeg";
 import ipadImage from "../../assets/iPad.webp";
 import newCar from "../../assets/newcar.jpeg";
- feature/new-authentication
+ 
 import { apiGetAllAdverts } from "../../services/adverts";
 import SingleAd from "./SingleAd";
- main
+ 
 
 const Adverts = () => {
   const [searchTerm, setSearchTerm] = useState("");

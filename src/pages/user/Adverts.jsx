@@ -13,6 +13,13 @@ const Adverts = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All");
 
+  // export apiGetAllAdverts = (payload) =>{
+  //   return apiClient.post('/adverts', payload, {
+  //     headers:{
+  //       Authorization: `Bearer %{localStorage.getItem('token')}`
+  //     }
+  //   })
+  // }
   const fetchAdds = async () => {
     try {
       const res = await apiGetAllAdverts();

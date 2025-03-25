@@ -1,5 +1,3 @@
-
-
 const SingleAd = () => {
   return (
     <div className="flex max-w-2xl mx-auto p-4 border rounded-lg shadow-lg bg-white">

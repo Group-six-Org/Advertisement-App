@@ -1,30 +1,33 @@
 import React from "react";
+import { apiAddAdvert } from "../../services/adverts";
 
 const CreateAd = () => {
-  const handleSubmit = async (event) =>{
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
     try {
+      // const response = await apiAddAdvert(formData);
       const response = await apiAddAdvert(formData);
       console.log(response);
+      alert("Add was added successfully");
     } catch (error) {
       console.log(error);
+      alert("failed");
     }
-  }
+  };
   return (
-    
-
-<div className="flex justify-center items-center min-h-screen w-full bg-gray-100 p-6">
+    <div className="flex justify-center items-center min-h-screen w-full bg-gray-100 p-6">
       <div className="w-full max-w-4xl bg-white p-8 shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Post Advertisement
         </h2>
-        <form className="grid grid-cols-1 gap-6"onSubmit={handleSubmit}>
+        <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
           {/* Title Field */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Title</label>
-            <input name="text"
+            <input
+              name="title"
               type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter ad title"
@@ -32,8 +35,11 @@ const CreateAd = () => {
           </div>
           {/* Price Field */}
           <div className="flex flex-col">
-            <label className="text-gray-700 font-medium mb-2">Price (GHs)</label>
-            <input name="text"
+            <label className="text-gray-700 font-medium mb-2">
+              Price (GHs)
+            </label>
+            <input
+              name="price"
               type="number"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter price"
@@ -41,8 +47,11 @@ const CreateAd = () => {
           </div>
           {/* Description Field */}
           <div className="flex flex-col">
-            <label className="text-gray-700 font-medium mb-2">Description</label>
+            <label className="text-gray-700 font-medium mb-2">
+              Description
+            </label>
             <textarea
+              name="description"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="4"
               placeholder="Enter ad description"
@@ -50,8 +59,11 @@ const CreateAd = () => {
           </div>
           {/* Image Upload Field */}
           <div className="flex flex-col">
-            <label className="text-gray-700 font-medium mb-2">Upload Image</label>
-            <input name="file"
+            <label className="text-gray-700 font-medium mb-2">
+              Upload Image
+            </label>
+            <input
+              name="pictures"
               type="file"
               accept="only images"
               multiple
@@ -62,7 +74,7 @@ const CreateAd = () => {
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Category</label>
             <select className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="">Select a category</option>
+              <option value="category">Select a category</option>
               <option value="property">Property</option>
               <option value="cars">Cars</option>
               <option value="electronics">Electronics</option>
@@ -80,12 +92,7 @@ const CreateAd = () => {
         </form>
       </div>
     </div>
-
   );
-
 };
 
 export default CreateAd;
-
-
-

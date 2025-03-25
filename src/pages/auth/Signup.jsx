@@ -1,161 +1,141 @@
 import React from "react";
-import { apiSignup } from "../../services/auth";
+import image from "../../assets/images/signup-bg.jpg";
+import { apiSignupVendor } from "../../services/auth";
 
 const SignUp = () => {
-  const handleSubmit = async (data) => {
-    const payload = {
-      firstName: data.firstname,
-      lastName: data.lastname,
-    };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      await apiSignup();
+      const formData = new FormData(event.target);
+      const res = await apiSignupVendor(formData, {
+        Headers: {
+          "Content-type": "application/json",
+        },
+      });
+      alert("this load was successfull");
+      console.log(res);
     } catch (error) {
       console.log(error);
+      alert("failed");
     }
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-6">
-      <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-4xl">
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
-          Vendor Sign Up
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="relative w-full h-64 md:h-96">
+        <img
+          src={image}
+          alt="signup bg"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="bg-white p-10 rounded-xl shadow-lg w-full max-w-2xl">
+        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
+          Sign Up
         </h2>
 
-        <form className="grid grid-cols-2 gap-6" onSubmit={handleSubmit}>
-          {/* Left Column */}
-          <div className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* First Name & Last Name */}
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block font-semibold text-gray-700">
-                Business Name *
+              <label className="block text-gray-600 font-medium mb-1">
+                First Name
               </label>
               <input
+                name="firstName"
                 type="text"
-                name="businessName"
-                placeholder="Enter business name"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
+                placeholder="Enter first name"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="block font-semibold text-gray-700">
-                Owner's Name *
-              </label>
-              <div className="flex space-x-2">
-                <input
-                  type="text"
-                  name="ownerFirstName"
-                  placeholder="First Name"
-                  className="w-1/2 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                />
-                <input
-                  type="text"
-                  name="ownerLastName"
-                  placeholder="Last Name"
-                  className="w-1/2 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block font-semibold text-gray-700">
-                Business Location *
+              <label className="block text-gray-600 font-medium mb-1">
+                Last Name
               </label>
               <input
+                name="lastName"
                 type="text"
-                name="location"
-                placeholder="Enter location"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block font-semibold text-gray-700">
-                Contact Number *
-              </label>
-              <input
-                type="tel"
-                name="contact"
-                placeholder="Enter phone number"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
+                placeholder="Enter last name"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-4">
+          {/* Email & Password */}
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block font-semibold text-gray-700">
-                Business Website / Social Media *
+              <label className="block text-gray-600 font-medium mb-1">
+                User Name
               </label>
               <input
+                name="userName"
                 type="text"
-                name="website"
-                placeholder="Website or social media link"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                placeholder="Enter last name"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
-
             <div>
-              <label className="block font-semibold text-gray-700">
+              <label className="block text-gray-600 font-medium mb-1">
                 Email *
               </label>
               <input
-                type="email"
                 name="email"
+                type="email"
                 placeholder="Enter your email"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="block font-semibold text-gray-700">
-                Product Type & Description *
-              </label>
-              <textarea
-                name="description"
-                placeholder="Describe your products"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                rows="2"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block font-semibold text-gray-700">
-                Product Quantity *
+              <label className="block text-gray-600 font-medium mb-1">
+                Password *
               </label>
               <input
-                type="number"
-                name="quantity"
-                placeholder="Number of products available"
-                className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
+                name="password"
+                type="password"
+                placeholder="Create a password"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">
+                Confirm Password *
+              </label>
+              <input
+                type="password"
+                placeholder="Confirm password"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
               />
             </div>
           </div>
 
-          {/* Full-Width Button */}
-          <div className="col-span-2 flex justify-center">
-            <button
-              type="submit"
-              className="w-full max-w-sm bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition"
-            >
-              Sign Up
-            </button>
+          {/* Confirm Password & Role Selection */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">
+                Sign Up As *
+              </label>
+              <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none">
+                <option>User</option>
+                <option>Vendor</option>
+              </select>
+            </div>
           </div>
-        </form>
 
-        <p className="text-sm text-center text-gray-500 mt-4">
-          Already have an account?{" "}
-          <a href="#" className="text-blue-600 font-semibold hover:underline">
-            Login
-          </a>
-        </p>
+          {/* Submit Button */}
+          <button className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition">
+            Sign Up
+          </button>
+
+          {/* Login Link */}
+          <p className="text-center text-gray-600 text-sm mt-3">
+            Already have an account?{" "}
+            <a href="#" className="text-green-600 font-medium hover:underline">
+              Login
+            </a>
+          </p>
+        </form>
       </div>
     </div>
   );

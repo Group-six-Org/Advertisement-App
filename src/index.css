@@ -4,12 +4,11 @@
 }
 .custom-shape-divider-top-1701256467 {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  z-index: 1;
 }
 
 .custom-shape-divider-top-1701256467 svg {
@@ -46,7 +45,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   font-style: oblique;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .myButton:hover {
   background-color: aliceblue;

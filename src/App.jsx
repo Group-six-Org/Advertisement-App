@@ -13,7 +13,10 @@ import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
 
 import "./App.css";
+feature/create-add
+import EditForm from "./components/EditForm";
 import Navbar from "./components/Navbar";
+main
 
 function App() {
   return (
@@ -31,6 +34,7 @@ function App() {
           <Route index={true} element={<Overview />} />
           <Route path="create-ad" element={<CreateAd />} />
           <Route path="ads" element={<VendorAds />} />
+          <Route path="editForm" element={<EditForm />} />
         </Route>
       </Routes>
     </BrowserRouter>

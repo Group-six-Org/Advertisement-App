@@ -1,8 +1,6 @@
-const SingleAd = ({ ad }) => {
-  // if (!ad) {
-  //   return <p className="text-center text-gray-500">Ad not found.</p>;
-  // }
 
+
+const SingleAd = () => {
   return (
     <div className="flex max-w-2xl mx-auto p-4 border rounded-lg shadow-lg bg-white">
       <img
@@ -19,10 +17,3 @@ const SingleAd = ({ ad }) => {
 
 export default SingleAd;
 
-// import React from "react";
-
-// const SingleAd = () => {
-//   return <div>SingleAd</div>;
-// };
-
-// export default SingleAd;

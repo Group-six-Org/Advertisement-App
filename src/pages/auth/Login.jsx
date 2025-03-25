@@ -7,6 +7,7 @@ const Login = () => {
     const formData = new FormData(event.target);
     try {
       const response = await apiLogin(formData);
+      localStorage.setItem
       console.log(response);
       alert("successful");
     } catch (error) {

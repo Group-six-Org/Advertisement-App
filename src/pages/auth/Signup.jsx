@@ -5,13 +5,10 @@ import { apiSignupVendor } from "../../services/auth";
 const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const formData = new FormData(event.target);
+
     try {
-      const formData = new FormData(event.target);
-      const res = await apiSignupVendor(formData, {
-        Headers: {
-          "Content-type": "application/json",
-        },
-      });
+      const res = await apiSignupVendor(formData);
       alert("this load was successfull");
       console.log(res);
     } catch (error) {
@@ -103,6 +100,7 @@ const SignUp = () => {
                 Confirm Password *
               </label>
               <input
+                name="confirmPassword"
                 type="password"
                 placeholder="Confirm password"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
@@ -116,10 +114,11 @@ const SignUp = () => {
               <label className="block text-gray-600 font-medium mb-1">
                 Sign Up As *
               </label>
-              <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none">
+              <input type="text" name="role" />
+              {/* <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none">
                 <option>User</option>
                 <option>Vendor</option>
-              </select>
+              </select> */}
             </div>
           </div>
 

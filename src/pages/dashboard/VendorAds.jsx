@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import image from "../../assets/images/car 1.jpg"
 import { Link } from "react-router";
+import { apiGetVendorAdverts } from "../../services/adverts";
 
 
 const VendorAds = () => {
+  const navigate = useState
+  const [ads, setAds] = useState([])
+
+  const getAds = async () => {
+    try {
+      const response = await apiGetVendorAdverts();
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    getAds();
+  },[])
+
   return (
+
     <div className="w-full min-h-screen flex flex-col bg-gray-100">
     {/* Banner Section */}
     <div className="bg-green-500 h-64 flex items-center justify-center text-white text-center">

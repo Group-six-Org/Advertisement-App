@@ -5,16 +5,22 @@ import houseImage from "../../assets/house.jpeg";
 import ipadImage from "../../assets/iPad.webp";
 import newCar from "../../assets/newcar.jpeg";
 
- 
 import { apiGetAllAdverts } from "../../services/adverts";
 import SingleAd from "./SingleAd";
-main
+import { apiClient } from "../../services/config";
 
 const Adverts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All");
 
+  // export apiGetAllAdverts = (payload) =>{
+  //   return apiClient.post('/adverts', payload, {
+  //     headers:{
+  //       Authorization: `Bearer %{localStorage.getItem('token')}`
+  //     }
+  //   })
+  // }
   const fetchAdds = async () => {
     try {
       const res = await apiGetAllAdverts();

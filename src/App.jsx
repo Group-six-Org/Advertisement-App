@@ -11,7 +11,9 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import Overview from "./pages/dashboard/Overview";
 import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
+
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route index={true} element={<Landing />} />
           <Route path="adverts" element={<Adverts />} />
-          <Route path="adverts/:id" element={<SingleAd />} />
+          <Route path="adverts/:id" element={<SingleAd />} /> 
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

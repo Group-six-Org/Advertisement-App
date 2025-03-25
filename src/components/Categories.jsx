@@ -8,7 +8,7 @@ import image5 from "./../assets/images/iphone.jpg";
 const Categories = () => {
   return (
     <section className="py-10 bg-gray-100">
-      <div className="container mx-auto">
+      <div className="container mx-auto object-contain">
         <h2 className="text-center text-3xl text-gray-800 font-bold mb-6">
           Explore Categories
         </h2>

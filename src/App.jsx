@@ -13,10 +13,8 @@ import CreateAd from "./pages/dashboard/CreateAd";
 import VendorAds from "./pages/dashboard/VendorAds";
 
 import "./App.css";
-feature/create-add
 import EditForm from "./components/EditForm";
 import Navbar from "./components/Navbar";
-main
 
 function App() {
   return (
@@ -25,7 +23,7 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route index={true} element={<Landing />} />
           <Route path="adverts" element={<Adverts />} />
-          <Route path="adverts/:id" element={<SingleAd />} /> 
+          <Route path="adverts/:id" element={<SingleAd />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

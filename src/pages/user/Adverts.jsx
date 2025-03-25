@@ -7,7 +7,6 @@ import newCar from "../../assets/newcar.jpeg";
 
 import { apiGetAllAdverts } from "../../services/adverts";
 import SingleAd from "./SingleAd";
-import { apiClient } from "../../services/config";
 
 const Adverts = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,6 +32,7 @@ const Adverts = () => {
   useEffect(() => {
     fetchAdds();
   }, []);
+
   const adverts = [
     { image: newCar, title: "Car@frosty.onion", category: "Cars", price: 10 },
     {

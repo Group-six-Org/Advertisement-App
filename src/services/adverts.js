@@ -1,7 +1,11 @@
 import { apiClient } from "./config";
 
 export const apiAddAdvert = async (payload) =>
-  apiClient.post("/adverts", payload);
+  apiClient.post("/adverts", payload, {
+headers:{
+  Authorization: `Bearer ${localStorage.getItem("token")}`
+}
+  });
 
 export const apiGetAllAdverts = async () => apiClient.get("/ads");
 

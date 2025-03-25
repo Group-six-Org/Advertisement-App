@@ -1,6 +1,17 @@
 import React from "react";
 
 const CreateAd = () => {
+  const handleSubmit = async (event) =>{
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    try {
+      const response = await apiAddAdvert(formData);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     
 
@@ -9,11 +20,11 @@ const CreateAd = () => {
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Post Advertisement
         </h2>
-        <form className="grid grid-cols-1 gap-6">
+        <form className="grid grid-cols-1 gap-6"onSubmit={handleSubmit}>
           {/* Title Field */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Title</label>
-            <input
+            <input name="text"
               type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter ad title"
@@ -22,7 +33,7 @@ const CreateAd = () => {
           {/* Price Field */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Price (GHs)</label>
-            <input
+            <input name="text"
               type="number"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter price"
@@ -40,8 +51,10 @@ const CreateAd = () => {
           {/* Image Upload Field */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Upload Image</label>
-            <input
+            <input name="file"
               type="file"
+              accept="only images"
+              multiple
               className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>

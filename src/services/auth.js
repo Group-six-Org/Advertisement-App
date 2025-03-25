@@ -9,4 +9,8 @@ export const apiSignupVendor = async (payload) => {
 };
 
 export const apiLogin = async (payload) =>
-  apiClient.post("/users/login", payload);
+  apiClient.post("/users/login", payload, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });

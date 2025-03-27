@@ -18,16 +18,16 @@ const Hero = () => {
         <div className="mt-6 space-x-4">
           <Link
             to="/signup"
-            className="bg-white text-green-600 px-6 py-3 rounded-md font-semibold"
+            className="bg-orange-600 text-white px-6 py-3 rounded-md font-semibold"
           >
-            Browse Ads
+            Get Started
           </Link>
-          <Link
+          {/* <Link
             to="/dashboard/create-ad"
             className="bg-orange-600 text-white px-6 py-3 rounded-md font-semibold"
           >
             Post an Ad
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

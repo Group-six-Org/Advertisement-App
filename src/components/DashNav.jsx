@@ -21,7 +21,7 @@ const DashNav = () => {
         <input
           type="text"
           placeholder="What are you looking for..."
-          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
         />
       </div>
 
@@ -30,9 +30,9 @@ const DashNav = () => {
         {/* <button className="text-white font-semibold hover:underline">
           Log in
         </button> */}
-        <button className="bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-orange-600">
+        {/* <button className="bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-orange-600">
           POST AD
-        </button>
+        </button> */}
       </div>
     </div>
   </div>

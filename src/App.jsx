@@ -33,7 +33,7 @@ function App() {
           <Route index={true} element={<Overview />} />
           <Route path="create-ad" element={<CreateAd />} />
           <Route path="ads" element={<VendorAds />} />
-          <Route path="editForm" element={<EditForm />} />
+          <Route path="editForm/:id" element={<EditForm />} />
         </Route>
       </Routes>
     </BrowserRouter>

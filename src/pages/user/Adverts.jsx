@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import AddsCard from "../../components/AddsCard";
 import carImage from "../../assets/imagen-lexus.jpg";
-import houseImage from "../../assets/house.jpeg";
-import ipadImage from "../../assets/iPad.webp";
-import newCar from "../../assets/newcar.jpeg";
+// import houseImage from "../../assets/house.jpeg";
+// import ipadImage from "../../assets/iPad.webp";
+// import newCar from "../../assets/newcar.jpeg";
 
 import { apiGetAllAdverts } from "../../services/adverts";
 import SingleAd from "./SingleAd";
@@ -12,88 +12,90 @@ const Adverts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All");
+  const [adverts, setFecthAds] = useState([]);
 
-  // export apiGetAllAdverts = (payload) =>{
-  //   return apiClient.post('/adverts', payload, {
-  //     headers:{
-  //       Authorization: `Bearer %{localStorage.getItem('token')}`
-  //     }
-  //   })
-  // }
   const fetchAdds = async () => {
     try {
       const res = await apiGetAllAdverts();
-      console.log(res);
+      alert("loading was successful");
+      setFecthAds(res.data);
+      console.log(res.data);
     } catch (err) {
       console.log(err);
+      alert("fetch failed");
     }
   };
 
   useEffect(() => {
     fetchAdds();
   }, []);
+  // const adverts = [
+  //   { image: newCar, title: "Car@frosty.onion", category: "Cars", price: 10 },
+  //   {
+  //     image: houseImage,
+  //     title: "personal@house.onion",
+  //     category: "House",
+  //     price: 20,
+  //   },
+  //   {
+  //     image: ipadImage,
+  //     title: "electronic@iPad.onion",
+  //     category: "Electronic",
+  //     price: 30,
+  //   },
+  //   {
+  //     image: newCar,
+  //     title: "doSomething@car.onion",
+  //     category: "Car",
+  //     price: 40,
+  //   },
+  //   {
+  //     image: houseImage,
+  //     title: "House@tvalley.onion",
+  //     category: "House",
+  //     price: 50,
+  //   },
+  //   {
+  //     image: ipadImage,
+  //     title: "new@ipad.onion",
+  //     category: "Electronic",
+  //     price: 10,
+  //   },
+  //   { image: newCar, title: "latest@car.onion", category: "Cars", price: 20 },
+  //   {
+  //     image: houseImage,
+  //     title: "my@house.onion",
+  //     category: "House",
+  //     price: 30,
+  //   },
+  //   {
+  //     image: ipadImage,
+  //     title: "some@apple.ipad",
+  //     category: "Electronic",
+  //     price: 40,
+  //   },
+  //   { image: newCar, title: "that@car.onion", category: "Car", price: 50 },
+  //   {
+  //     image: houseImage,
+  //     title: "frosty@car.onion",
+  //     category: "Car",
+  //     price: 10,
+  //   },
+  //   {
+  //     image: ipadImage,
+  //     title: "ipad@frosty.onion",
+  //     category: "Electronic",
+  //     price: 20,
+  //   },
+  // ];
 
-  const adverts = [
-    { image: newCar, title: "Car@frosty.onion", category: "Cars", price: 10 },
-    {
-      image: houseImage,
-      title: "personal@house.onion",
-      category: "House",
-      price: 20,
-    },
-    {
-      image: ipadImage,
-      title: "electronic@iPad.onion",
-      category: "Electronic",
-      price: 30,
-    },
-    {
-      image: newCar,
-      title: "doSomething@car.onion",
-      category: "Car",
-      price: 40,
-    },
-    {
-      image: houseImage,
-      title: "House@tvalley.onion",
-      category: "House",
-      price: 50,
-    },
-    {
-      image: ipadImage,
-      title: "new@ipad.onion",
-      category: "Electronic",
-      price: 10,
-    },
-    { image: newCar, title: "latest@car.onion", category: "Cars", price: 20 },
-    {
-      image: houseImage,
-      title: "my@house.onion",
-      category: "House",
-      price: 30,
-    },
-    {
-      image: ipadImage,
-      title: "some@apple.ipad",
-      category: "Electronic",
-      price: 40,
-    },
-    { image: newCar, title: "that@car.onion", category: "Car", price: 50 },
-    {
-      image: houseImage,
-      title: "frosty@car.onion",
-      category: "Car",
-      price: 10,
-    },
-    {
-      image: ipadImage,
-      title: "ipad@frosty.onion",
-      category: "Electronic",
-      price: 20,
-    },
+  const categories = [
+    "All",
+    "Beauty Supplies",
+    "Electronics",
+    "Home & Kitchen",
+    "Vehicles",
   ];
-
-  const categories = ["All", "Luxury", "Fashion", "Car", "House"];
   const prices = ["All", "0-20", "21-40", "41-60"];
 
   const filteredAdverts = adverts.filter((advert) => {
@@ -169,10 +171,19 @@ const Adverts = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-4">
-        {filteredAdverts.map((advert, index) => (
+        {/* {adverts.map((advert) => (
           <AddsCard
-            key={index}
-            image={advert.image}
+            key={advert.id}
+            image={advert.pictures[1]}
+            title={advert.title}
+            category={advert.category}
+            price={advert.price}
+          />
+        ))} */}
+        {filteredAdverts.map((advert) => (
+          <AddsCard
+            key={advert.id}
+            image={advert.pictures?.[0] || carImage}
             title={advert.title}
             category={advert.category}
             price={advert.price}
@@ -192,32 +203,3 @@ const Adverts = () => {
 };
 
 export default Adverts;
-
-// // import React from "react";
-// // import AddsCard from "../../components/AddsCard";
-
-// // const Adverts = () => {
-// //   return (
-// //     <div className="flex flex-col bg-blue-100 min-h-screen">
-// //       <div>
-// //         <h2>Adverts page</h2>
-// //         <div className="search-area">
-// //           <div className="categories-side">
-// //             <p>Options goes here</p>
-// //           </div>
-// //           <div>
-// //           <p>Search bar goes here</p>
-// //           </div>        </div>
-// //       </div>
-// //       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-15">
-// //         <AddsCard title="Onion" category="Luxary" price={10}/>
-// //         <AddsCard title="Mango" category = "Fashion" price={20}/>
-// //         <AddsCard title="Apple" category = "Car" price={30}/>
-// //         <AddsCard title="Banana" category = "House" price={40} />
-// //         <AddsCard title="Orange" category = "Car" price={50} />
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default Adverts;

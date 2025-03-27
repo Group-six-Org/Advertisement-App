@@ -24,7 +24,7 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/why-vdl" className="hover:underline">
-                Why VDL?
+                Why AdMingle?
               </Link>
             </li>
           </ul>

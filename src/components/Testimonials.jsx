@@ -1,4 +1,6 @@
 import React from "react";
+import image from "../assets/images/cus 1.jpg";
+import image1 from "../assets/images/cus 2.jpg";
 
 const Testimonials = () => {
   return (
@@ -11,16 +13,26 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 gap-8 mt-8">
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <img
+              src={image}
+              alt="User A"
+              className="w-40 h-40 rounded-full mx-auto mb-3"
+            />
             <p className="text-gray-700">
               "This platform has been amazing for my business!"
             </p>
-            <h4 className="font-bold mt-2">- User A</h4>
+            <h4 className="font-bold mt-2">- Araba</h4>
           </div>
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+            <img
+              src={image1}
+              alt="User A"
+              className="w-40 h-40 rounded-full mx-auto mb-3"
+            />
             <p className="text-gray-700">
               "I've sold so many items quickly and easily!"
             </p>
-            <h4 className="font-bold mt-2">- User B</h4>
+            <h4 className="font-bold mt-2">- Noldy</h4>
           </div>
         </div>
       </div>

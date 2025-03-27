@@ -20,14 +20,16 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 gap-8 mt-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold">Our Vision</h3>
+            <h3 className="text-xl font-semibold text-gray-800">Our Vision</h3>
             <p className="text-gray-500 mt-2">
               To become the most reliable marketplace for people looking to buy
               and sell goods conveniently.
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold">Why Choose Us?</h3>
+            <h3 className="text-xl font-semibold text-gray-800">
+              Why Choose Us?
+            </h3>
             <p className="text-gray-500 mt-2">
               Secure transactions, easy listing process, and a large audience
               for your ads.

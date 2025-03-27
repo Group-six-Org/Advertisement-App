@@ -17,8 +17,7 @@ export const apiUpdateAvert = async (id, payload) =>
 
 // Getting a single Add
 
-export const apiGetSingleAdvert = async (id) =>
-  apiClient.get(`/ads/${id}`);
+export const apiGetSingleAdvert = async (id) => apiClient.get(`/ads/${id}`);
 
 export const apiDeleteVendorAdvertbyId = async (id) =>
-  apiClient.delete('/adverts/vendor/${id}');
+  apiClient.delete(`/ads/${id}`);

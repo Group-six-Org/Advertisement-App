@@ -98,7 +98,7 @@ const EditForm = () => {
           {/* Category Field */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Category</label>
-            <select className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <select name="category" className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
               <option value="">Select a category</option>
               <option value="Electronics">Electronics</option>
               <option value="Home & Kitchen">Home & Kitchen</option>

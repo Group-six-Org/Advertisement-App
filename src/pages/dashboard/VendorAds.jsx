@@ -24,10 +24,10 @@ const VendorAds = () => {
     getAds();
   }, []);
 
-  const handleDelete = async () => {
+  const handleDelete = async (id) => {
     //delete advert from backend
     try {
-      const response = await apiDeleteVendorAdvertbyId(ads.id);
+      const response = await apiDeleteVendorAdvertbyId(id);
       console.log(response.data);
       window.location.reload();
     } catch (error) {
@@ -77,7 +77,7 @@ const VendorAds = () => {
                     </button>
                   </Link>
                   <button
-                    onClick={handleDelete}
+                    onClick={() => handleDelete(ads.id)}
                     className="bg-orange-500 text-white px-4 py-2 rounded"
                   >
                     Delete

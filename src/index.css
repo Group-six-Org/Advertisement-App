@@ -19,7 +19,7 @@
 }
 
 .custom-shape-divider-top-1701256467 .shape-fill {
-  fill: green;
+  fill: rgba(0, 128, 0, 0.603);
 }
 #allAdds {
   color: rgb(185, 122, 122);
@@ -50,4 +50,12 @@
 .myButton:hover {
   background-color: aliceblue;
   color: black;
+}
+.add-to-cart {
+  background-color: rgb(212, 222, 244);
+  padding: 7px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(67, 109, 3);
+  cursor: pointer;
 }

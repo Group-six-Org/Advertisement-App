@@ -1,8 +1,10 @@
 import React from "react";
 import image from "../../assets/images/signup-bg.jpg";
 import { apiSignupVendor } from "../../services/auth";
+import { useNavigate } from "react-router";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -11,6 +13,7 @@ const SignUp = () => {
       const res = await apiSignupVendor(formData);
       alert("this load was successfull");
       console.log(res);
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
       alert("failed");
@@ -44,7 +47,7 @@ const SignUp = () => {
 
       {/* Form Section */}
       <div className="max-w-3xl mx-auto bg-white p-10 mt-6 rounded-xl shadow-lg">
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           {/* First Name & Last Name */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>

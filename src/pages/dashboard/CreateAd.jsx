@@ -3,8 +3,12 @@ import { apiAddAdvert } from "../../services/adverts";
 
 const CreateAd = () => {
   const handleSubmit = async (event) => {
+    //prevent Dedault submit behavior//
     event.preventDefault();
+    // show loading indicator //
+    //collect formData //
     const formData = new FormData(event.target);
+    //post data to backend //
 
     try {
       // const response = await apiAddAdvert(formData);
@@ -40,7 +44,7 @@ const CreateAd = () => {
             </label>
             <input
               name="price"
-              type="number"
+              type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter price"
             />
@@ -52,6 +56,7 @@ const CreateAd = () => {
             </label>
             <textarea
               name="description"
+              type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="4"
               placeholder="Enter ad description"
@@ -62,22 +67,24 @@ const CreateAd = () => {
             <label className="text-gray-700 font-medium mb-2">
               Upload Image
             </label>
-            <input
-              name="pictures"
-              type="file"
-              accept="only images"
-              multiple
-              className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+                <input
+                name="pictures"  // Updated to match the expected backend field name
+                type="file"
+                accept="image/*"  // Corrected to ensure only images can be selected
+                multiple  // Allows selecting up to 3 images
+                className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
           </div>
           {/* Category Field */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Category</label>
-            <select className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option value="category">Select a category</option>
-              <option value="property">Property</option>
-              <option value="cars">Cars</option>
-              <option value="electronics">Electronics</option>
+            <select className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" name="category">
+            {/* <option value="Select Category">Select Category</option>               */}
+              <option value="Electronics">Electronics</option>
+              <option value="Home & Kitchen">Home & Kitchen</option>
+              <option value="Vehicles">Vehicles</option>
+              <option value="Real Estate">Real Estate</option>
             </select>
           </div>
           {/* Submit Button */}

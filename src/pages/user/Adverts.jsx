@@ -17,7 +17,7 @@ const Adverts = () => {
   const fetchAdds = async () => {
     try {
       const res = await apiGetAllAdverts();
-      alert("loading was successful");
+      //alert("loading was successful");
       setFecthAds(res.data);
       console.log(res.data);
     } catch (err) {
@@ -183,10 +183,7 @@ const Adverts = () => {
         {filteredAdverts.map((advert) => (
           <AddsCard
             key={advert.id}
-            image={advert.pictures?.[0] || carImage}
-            title={advert.title}
-            category={advert.category}
-            price={advert.price}
+            advert={advert}
           />
         ))}
       </div>
@@ -197,7 +194,6 @@ const Adverts = () => {
       <div className="mt-10">
         <img src={carImage} alt="dosomething" />
       </div>
-      <SingleAd />
     </div>
   );
 };

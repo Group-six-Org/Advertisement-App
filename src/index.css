@@ -53,4 +53,11 @@
 
 #navbar {
   z-index: 100;
+.add-to-cart {
+  background-color: rgb(212, 222, 244);
+  padding: 7px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(67, 109, 3);
+  cursor: pointer;
 }

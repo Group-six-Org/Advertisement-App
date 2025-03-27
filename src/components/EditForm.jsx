@@ -1,14 +1,44 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router";
+import { useNavigate } from "react-router";
+import { apiGetSingleAdvert, apiUpdateAvert } from "../services/adverts";
 
 const EditForm = () => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [ad, setAd] = useState({});
+
+  const getAd = async () => {
+    try {
+      const response = await apiGetSingleAdvert(id);
+      setAd(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAd();
+  }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    try {
+      const response = await apiUpdateAvert(id, data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen w-full bg-gray-100 p-6">
       <div className="w-full max-w-2xl bg-white p-8 shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           EDIT AD
         </h2>
-        <form className="grid grid-cols-1 gap-6">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
           {/* Title Field */}
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Title</label>
@@ -17,6 +47,8 @@ const EditForm = () => {
               type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter ad title"
+              required
+              defaultValue={ad.title}
             />
           </div>
 
@@ -30,6 +62,8 @@ const EditForm = () => {
               type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter price"
+              required
+              defaultValue={ad.price}
             />
           </div>
 
@@ -39,8 +73,10 @@ const EditForm = () => {
               Description
             </label>
             <textarea
-            name="description"
-            type="text"
+              name="description"
+              type="text"
+              required
+              defaultValue={ad.description}
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="4"
               placeholder="Enter ad description"

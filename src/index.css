@@ -4,7 +4,7 @@
 }
 .custom-shape-divider-top-1701256467 {
   position: absolute;
-  top: 0px;
+  top: 5rem;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -19,7 +19,7 @@
 }
 
 .custom-shape-divider-top-1701256467 .shape-fill {
-  fill: rgba(0, 128, 0, 0.603);
+  fill: rgb(22, 163, 53);
 }
 #allAdds {
   color: rgb(185, 122, 122);
@@ -31,7 +31,6 @@
   background-clip: text;
   color: transparent;
   position: relative;
-  z-index: 200;
 }
 .myButton {
   display: block;
@@ -51,6 +50,9 @@
   background-color: aliceblue;
   color: black;
 }
+
+#navbar {
+  z-index: 100;
 .add-to-cart {
   background-color: rgb(212, 222, 244);
   padding: 7px;

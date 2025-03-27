@@ -7,7 +7,7 @@ const Login = () => {
     const formData = new FormData(event.target);
     try {
       const response = await apiLogin(formData);
-      localStorage.setItem
+      localStorage.setItem;
       console.log(response);
       alert("successful");
     } catch (error) {
@@ -32,7 +32,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none"
               required
             />
           </div>
@@ -45,14 +45,14 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none"
               required
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition"
+            className="w-full bg-green-600 text-white py-2 rounded-md font-semibold hover:bg-green-700 transition"
             required
           >
             Login
@@ -61,7 +61,10 @@ const Login = () => {
 
         <p className="text-sm text-center text-gray-500 mt-4">
           Don't have an account?{" "}
-          <a href="#" className="text-blue-600 font-semibold hover:underline">
+          <a
+            href="/signup"
+            className="text-green-600 font-semibold hover:underline"
+          >
             Sign Up
           </a>
         </p>

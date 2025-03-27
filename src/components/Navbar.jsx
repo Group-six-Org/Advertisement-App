@@ -3,7 +3,10 @@ import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-green-600 text-white p-4">
+    <nav
+      id="navbar"
+      className="fixed top-0 left-0 w-full bg-green-600 text-white p-4"
+    >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-3xl font-semibold text-orange-600 italic">
@@ -37,17 +40,14 @@ const Navbar = () => {
 
           {/* Auth Buttons */}
           <div className="flex items-center space-x-4">
-            <Link to="/login" className="hover:underline">
-              Sign In
-            </Link>
-            <Link to="/register" className="hover:underline">
-              Register
+            <Link to="/login" className="hover:underline font-bold">
+              LOGIN IN
             </Link>
             <Link
-              to="/sell"
-              className="bg-orange-500 text-white px-6 py-3 rounded-md"
+              to="/signup"
+              className="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold"
             >
-              SELL
+              SIGN UP
             </Link>
           </div>
         </div>

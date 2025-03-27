@@ -17,23 +17,36 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="relative w-full h-64 md:h-96">
+    <div className="min-h-screen bg-gray-100">
+      {/* Banner Section */}
+      <div className="relative w-full h-64 md:h-80">
         <img
           src={image}
-          alt="signup bg"
+          alt="Signup Banner"
           className="w-full h-full object-cover"
         />
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center  bg-black/70">
+          <div className="absolute top-4 left-6">
+            <h1 className="text-2xl font-semibold text-orange-600 italic">
+              Ad <span className="text-white italic">Mingle</span>
+            </h1>
+          </div>
+          <h1 className="text-6xl font-bold text-white">
+            Sign<span className="text-green-600"> Up</span>
+          </h1>
+          <p className="text-white text-lg mt-2 text-center px-4">
+            Thank you for expressing interest in our service. Kindly fill in the
+            form below.
+          </p>
+        </div>
       </div>
 
-      <div className="bg-white p-10 rounded-xl shadow-lg w-full max-w-2xl">
-        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
-          Sign Up
-        </h2>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Form Section */}
+      <div className="max-w-3xl mx-auto bg-white p-10 mt-6 rounded-xl shadow-lg">
+        <form className="space-y-6">
           {/* First Name & Last Name */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-gray-600 font-medium mb-1">
                 First Name
@@ -41,11 +54,10 @@ const SignUp = () => {
               <input
                 name="firstName"
                 type="text"
-                placeholder="Enter first name"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+                required
               />
             </div>
-
             <div>
               <label className="block text-gray-600 font-medium mb-1">
                 Last Name
@@ -53,14 +65,25 @@ const SignUp = () => {
               <input
                 name="lastName"
                 type="text"
-                placeholder="Enter last name"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+                required
               />
             </div>
           </div>
 
           {/* Email & Password */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">
+                Email
+              </label>
+              <input
+                name="email"
+                type="email"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+                required
+              />
+            </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">
                 User Name
@@ -68,69 +91,62 @@ const SignUp = () => {
               <input
                 name="userName"
                 type="text"
-                placeholder="Enter last name"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+                required
               />
             </div>
-            <div>
-              <label className="block text-gray-600 font-medium mb-1">
-                Email *
-              </label>
-              <input
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
-            </div>
+          </div>
 
+          {/* Password & Confirm Password */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-gray-600 font-medium mb-1">
-                Password *
+                Password
               </label>
               <input
                 name="password"
                 type="password"
-                placeholder="Create a password"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+                required
               />
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">
-                Confirm Password *
+                Confirm Password
               </label>
               <input
                 name="confirmPassword"
                 type="password"
-                placeholder="Confirm password"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+                required
               />
             </div>
           </div>
 
-          {/* Confirm Password & Role Selection */}
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-gray-600 font-medium mb-1">
-                Sign Up As *
-              </label>
-              <input type="text" name="role" />
-              {/* <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none">
-                <option>User</option>
-                <option>Vendor</option>
-              </select> */}
-            </div>
+          {/* User Role */}
+          <div>
+            <label className="block text-gray-600 font-medium mb-1">Role</label>
+            <select
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              name="role"
+            >
+              <option value="user">User</option>
+              <option value="vendor">Vendor</option>
+            </select>
           </div>
 
           {/* Submit Button */}
-          <button className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition">
+          <button className="bg-green-600 text-white px-6 py-2 rounded w-[200px] mx-auto block">
             Sign Up
           </button>
 
           {/* Login Link */}
           <p className="text-center text-gray-600 text-sm mt-3">
             Already have an account?{" "}
-            <a href="#" className="text-green-600 font-medium hover:underline">
+            <a
+              href="/login"
+              className="text-green-600 font-medium hover:underline"
+            >
               Login
             </a>
           </p>

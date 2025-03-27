@@ -1,11 +1,7 @@
 import { apiClient } from "./config";
 
 export const apiAddAdvert = async (payload) =>
-  apiClient.post("/classified-ads", payload, {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  });
+  apiClient.post("/classified-ads", payload);
 
 // Fecthing all user adds
 
@@ -26,4 +22,3 @@ export const apiGetSingleAdvert = async (id) =>
 
 export const apiDeleteVendorAdvertbyId = async (id) =>
   apiClient.delete('/adverts/vendor/${id}');
-

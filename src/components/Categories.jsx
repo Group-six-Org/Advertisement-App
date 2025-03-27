@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import image1 from "./../assets/images/car 1.jpg";
 import image2 from "./../assets/images/car 2.jpg";
 import image3 from "./../assets/images/home 1.jpg";
@@ -42,7 +43,7 @@ const Categories = () => {
 
           {/* Houses */}
           <div className="bg-white p-4 rounded-lg shadow">
-            <h3 className="text-2xl font-semibold text-center">Houses</h3>
+            <h3 className="text-2xl font-semibold text-center">Real Estates</h3>
             <div className="grid grid-cols-2 gap-2 py-3">
               <img
                 src={image3}
@@ -94,6 +95,14 @@ const Categories = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center items-center mt-4">
+        <Link
+          to="/signup"
+          className="bg-orange-600 text-white px-6 py-3 rounded-md font-semibold"
+        >
+          Explore More Ads
+        </Link>
       </div>
     </section>
   );

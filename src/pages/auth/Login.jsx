@@ -1,17 +1,19 @@
 import React from "react";
 import { apiLogin } from "../../services/auth";
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  const nagivate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     try {
       const response = await apiLogin(formData);
 
-      localStorage.setItem('token', response.data.accessTokenLogin);
-
+      localStorage.setItem("token", response.data.accessTokenLogin);
 
       console.log(response);
+      nagivate("/adverts");
       alert("successful");
     } catch (error) {
       console.log(error);

@@ -11,6 +11,7 @@ const VendorAds = () => {
   const getAds = async () => {
     try {
       const response = await apiGetVendorAdverts();
+      setAds(response.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -39,12 +40,12 @@ const VendorAds = () => {
     <div className="container mx-auto py-10 px-4">
       <h2 className="text-2xl font-bold mb-6">Cars</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {Array.from({ length: 8 }).map((_, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
+        {ads.map((ads) => (
+          <div key={ad.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img src={image} alt="Car" className="w-full h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-lg font-bold">Toyota Land Cruiser</h2>
-              <p className="text-gray-600">GHs 250,000.00</p>
+              <h2 className="text-lg font-bold">{ad.name}</h2>
+              <p className="text-gray-600">{ad.title}</p>
               <div className="mt-4 flex justify-between">
                 <Link to='/dashboard/editForm'>
                    <button className="bg-black text-white px-4 py-2 rounded">Edit</button>
@@ -60,7 +61,7 @@ const VendorAds = () => {
     
 
     {/* Third Grid Section - Electronics */}
-    <div className="container mx-auto py-10 px-4">
+    {/* <div className="container mx-auto py-10 px-4">
       <h2 className="text-2xl font-bold mb-6">Electronics</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {Array.from({ length: 8 }).map((_, index) => (
@@ -77,7 +78,7 @@ const VendorAds = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
   </div>
     
   );
@@ -87,10 +88,4 @@ const VendorAds = () => {
 export default VendorAds;
 
 
-// import React from "react";
 
-// const VendorAds = () => {
-//   return <div>My vendor adds</div>;
-// };
-
-// export default VendorAds;

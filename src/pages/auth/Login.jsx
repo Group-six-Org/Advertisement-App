@@ -7,7 +7,10 @@ const Login = () => {
     const formData = new FormData(event.target);
     try {
       const response = await apiLogin(formData);
-      localStorage.setItem;
+
+      localStorage.setItem('token', response.data.accessTokenLogin);
+
+
       console.log(response);
       alert("successful");
     } catch (error) {

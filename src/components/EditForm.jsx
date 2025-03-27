@@ -13,6 +13,7 @@ const EditForm = () => {
           <div className="flex flex-col">
             <label className="text-gray-700 font-medium mb-2">Title</label>
             <input
+              name="title"
               type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter ad title"
@@ -25,7 +26,8 @@ const EditForm = () => {
               Price (GHs)
             </label>
             <input
-              type="number"
+              name="price"
+              type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter price"
             />
@@ -37,6 +39,8 @@ const EditForm = () => {
               Description
             </label>
             <textarea
+            name="description"
+            type="text"
               className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="4"
               placeholder="Enter ad description"
@@ -49,6 +53,7 @@ const EditForm = () => {
               Upload Image
             </label>
             <input
+              name="pictures"
               type="file"
               className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -59,9 +64,10 @@ const EditForm = () => {
             <label className="text-gray-700 font-medium mb-2">Category</label>
             <select className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
               <option value="">Select a category</option>
-              <option value="property">Property</option>
-              <option value="cars">Cars</option>
-              <option value="electronics">Electronics</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Home & Kitchen">Home & Kitchen</option>
+              <option value="Vehicles">Vehicles</option>
+              <option value="Real Estate">Real Estate</option>
             </select>
           </div>
 

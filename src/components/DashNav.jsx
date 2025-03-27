@@ -27,9 +27,9 @@ const DashNav = () => {
 
       {/* Right: Login & Post Ad Buttons */}
       <div className="flex items-center mt-3 md:mt-0 space-x-4">
-        <button className="text-white font-semibold hover:underline">
+        {/* <button className="text-white font-semibold hover:underline">
           Log in
-        </button>
+        </button> */}
         <button className="bg-orange-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-orange-600">
           POST AD
         </button>

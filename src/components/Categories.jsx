@@ -5,6 +5,11 @@ import image2 from "./../assets/images/car 2.jpg";
 import image3 from "./../assets/images/home 1.jpg";
 import image4 from "./../assets/images/home 2.jpg";
 import image5 from "./../assets/images/iphone.jpg";
+import image6 from "./../assets/images/car 3.jpg";
+import image7 from "./../assets/images/car 4.jpg";
+import image8 from "./../assets/images/home 3.jpg";
+import image9 from "./../assets/images/headset.jpg";
+import image10 from "./../assets/images/blender.jpg";
 
 const Categories = () => {
   return (
@@ -29,12 +34,12 @@ const Categories = () => {
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image1}
+                src={image6}
                 alt="Vehicle 1"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image1}
+                src={image7}
                 alt="Vehicle 1"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
@@ -56,12 +61,12 @@ const Categories = () => {
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image1}
+                src={image8}
                 alt="Vehicle 1"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image1}
+                src={image3}
                 alt="Vehicle 1"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
@@ -78,17 +83,17 @@ const Categories = () => {
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image5}
+                src={image9}
                 alt="Electronic 2"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image1}
+                src={image10}
                 alt="Vehicle 1"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />
               <img
-                src={image1}
+                src={image5}
                 alt="Vehicle 1"
                 className="w-full h-60 object-cover rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
               />

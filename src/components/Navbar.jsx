@@ -38,11 +38,11 @@ const Navbar = () => {
                 About
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/ads" className="hover:underline">
                 Browse Ads
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/contact" className="hover:underline">
                 Contact
@@ -53,7 +53,7 @@ const Navbar = () => {
           {/* Auth Buttons */}
           <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
             <Link to="/login" className="hover:underline font-bold">
-              LOGIN IN
+              Login In/ Register
             </Link>
             <Link
               to="/signup"

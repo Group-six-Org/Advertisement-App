@@ -19,7 +19,7 @@ const Dashoverv = () => {
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
       <div className="bg-blue-500 text-white p-4 rounded-lg">
         <h2 className="text-lg font-semibold">Total Ads</h2>
-        <p className="text-2xl font-bold">25</p>
+        <p className="text-2xl font-bold">33</p>
       </div>
       <div className="bg-green-500 text-white p-4 rounded-lg">
         <h2 className="text-lg font-semibold">For Rent</h2>
@@ -27,7 +27,7 @@ const Dashoverv = () => {
       </div>
       <div className="bg-yellow-500 text-white p-4 rounded-lg">
         <h2 className="text-lg font-semibold">For Sale</h2>
-        <p className="text-2xl font-bold">5</p>
+        <p className="text-2xl font-bold">15</p>
       </div>
       <div className="bg-purple-500 text-white p-4 rounded-lg">
         <h2 className="text-lg font-semibold">Total Views</h2>
@@ -45,9 +45,15 @@ const Dashoverv = () => {
         </span>
       </div>
       <div className="border-b py-2 flex justify-between">
-        <span>Property</span>
+        <span> Real Estate & Property</span>
         <span className="bg-yellow-200 text-yellow-700 px-2 py-1 rounded-full text-sm">
-          4 Items
+          5 Items
+        </span>
+      </div>
+      <div className="border-b py-2 flex justify-between">
+        <span> Home & Kitchen </span>
+        <span className="bg-yellow-200 text-yellow-700 px-2 py-1 rounded-full text-sm">
+          8 Items
         </span>
       </div>
       <div className="py-2 flex justify-between">

@@ -80,10 +80,11 @@
 .addsInfo p:last-child {
   font-size: 14px;
   color: #d1dbd4;
+  color: orange;
   font-weight: bold;
   position: absolute;
   top: 0;
-  right: 5px;
+  right: 8px;
 }
 input:focus {
   outline: none;

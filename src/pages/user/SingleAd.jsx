@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import macbook from "../../assets/macbook.jpg";
+//import macbook from "../../assets/macbook.jpg";
 import { useEffect } from "react";
 import { apiGetSingleAdvert } from "../../services/adverts";
 import { useParams } from "react-router";
@@ -23,7 +23,7 @@ const AdvertDetails = () => {
   }, [id]);
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div id="maincontainer" className="w-screen h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="flex w-full max-w-5xl bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="w-1/2 h-full">
           <img
@@ -34,11 +34,11 @@ const AdvertDetails = () => {
         </div>
 
         {/* dosomething@info.onion */}
-        <div className="w-1/2 p-6 flex flex-col justify-between">
+        <div className="infoContainer">
           <div>
             <h2 className="text-2xl font-bold mb-2">{ad.title}</h2>
             <p className="text-lg text-gray-700 mb-4">$ {ad.price}</p>
-            <p className="text-gray-600 mb-6">{ad.description}</p>
+            <span className="description">{ad.description}</span>
           </div>
           <button className="add-to-cart">Add to Cart</button>
         </div>

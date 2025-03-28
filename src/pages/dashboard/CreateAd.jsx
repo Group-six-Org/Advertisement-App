@@ -12,7 +12,11 @@ const CreateAd = () => {
 
     try {
       // const response = await apiAddAdvert(formData);
-      const response = await apiAddAdvert(formData);
+      const response = await apiAddAdvert(formData, 
+        {
+          
+        }
+      );
       console.log(response);
       alert("Add was added successfully");
     } catch (error) {

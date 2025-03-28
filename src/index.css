@@ -9,6 +9,7 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  z-index: 29;
 }
 
 .custom-shape-divider-top-1701256467 svg {
@@ -61,4 +62,47 @@
   font-weight: 700;
   color: rgb(67, 109, 3);
   cursor: pointer;
+}
+#maincontainer{
+  height: 100vh;
+  width: 100%;
+  background-color: aliceblue;
+}
+.infoContainer {
+  padding-top: 50px;
+
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.infoContainer h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: orange;
+}
+.infoContainer p {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.description {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: gray;
+  margin-bottom: 2rem;
+}
+@media (max-width: 900px) {
+  .custom-shape-divider-top-1701256467 {
+    top: 4.2rem;
+  }
+  #mainContainer {
+    padding-left: 5%;
+  }
+}
+@media (max-width: 600px) {
+  #mainContainer {
+    padding-left: 7%;
+  }
 }

@@ -17,7 +17,7 @@ const Adverts = () => {
   const fetchAdds = async () => {
     try {
       const res = await apiGetAllAdverts();
-      //alert("loading was successful");
+      alert("loading was successful");
       setFecthAds(res.data);
       console.log(res.data);
     } catch (err) {
@@ -96,7 +96,7 @@ const Adverts = () => {
     "Home & Kitchen",
     "Vehicles",
   ];
-  const prices = ["All", "0-20", "21-40", "41-60"];
+  const prices = ["All", "0-200", "210-400", "410-1100"];
 
   const filteredAdverts = adverts.filter((advert) => {
     const matchesSearch = advert.title
@@ -106,9 +106,11 @@ const Adverts = () => {
       selectedCategory === "All" || advert.category === selectedCategory;
     const matchesPrice =
       selectedPrice === "All" ||
-      (selectedPrice === "0-20" && advert.price <= 20) ||
-      (selectedPrice === "21-40" && advert.price > 20 && advert.price <= 40) ||
-      (selectedPrice === "41-60" && advert.price > 40);
+      (selectedPrice === "0-200" && advert.price <= 200) ||
+      (selectedPrice === "210-400" &&
+        advert.price > 200 &&
+        advert.price <= 400) ||
+      (selectedPrice === "410-1100" && advert.price > 400);
     return matchesSearch && matchesCategory && matchesPrice;
   });
 
@@ -131,8 +133,8 @@ const Adverts = () => {
             ></path>
           </svg>
         </div>
-        <h2 id="allAdds" className="text-xl font-bold text-center mt-20">
-          @AllAdds.onion
+        <h2 id="allAdds" className="text-xl font-bold text-center mt-40">
+          Browse all Ads @AdMingle.onion
         </h2>
         <div className="search-area flex flex-col align-center justify-center md:flex-row gap-4 mt-20">
           <div className="categories-side flex gap-4">
@@ -181,10 +183,7 @@ const Adverts = () => {
           />
         ))} */}
         {filteredAdverts.map((advert) => (
-          <AddsCard
-            key={advert.id}
-            advert={advert}
-          />
+          <AddsCard key={advert.id} advert={advert} />
         ))}
       </div>
       <button className="myButton">load more...</button>

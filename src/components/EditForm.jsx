@@ -11,9 +11,11 @@ const EditForm = () => {
   const getAd = async () => {
     try {
       const response = await apiGetSingleAdvert(id);
+      alert("Edit was successfull");
       setAd(response.data);
     } catch (error) {
       console.log(error);
+      alert("failed");
     }
   };
 

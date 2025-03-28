@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router";
-import { BrowserRouter, Routes } from "react-router";
+import { BrowserRouter as Router, Routes } from "react-router";
 import RootLayout from "./layouts/RootLayout";
 import Landing from "./pages/user/Landing";
 import Adverts from "./pages/user/Adverts";
@@ -15,16 +15,20 @@ import VendorAds from "./pages/dashboard/VendorAds";
 import "./App.css";
 import EditForm from "./components/EditForm";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
+import { Home } from "lucide-react";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index={true} element={<Landing />} />
           <Route path="adverts" element={<Adverts />} />
           <Route path="adverts/:id" element={<SingleAd />} />
         </Route>
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/single-ad" element={<SingleAd />} />
@@ -36,7 +40,7 @@ function App() {
           <Route path="editForm/:id" element={<EditForm />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
